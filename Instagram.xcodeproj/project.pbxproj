@@ -19,6 +19,7 @@
 		7D1EB5C42A08519B005D5196 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1EB5C32A08519B005D5196 /* AccountViewController.swift */; };
 		7D1EB5C72A08B809005D5196 /* InstagramLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1EB5C62A08B809005D5196 /* InstagramLogo.swift */; };
 		7D1EB5CA2A08E366005D5196 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1EB5C92A08E366005D5196 /* PostCell.swift */; };
+		7D1EB5CC2A096B55005D5196 /* PostImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1EB5CB2A096B55005D5196 /* PostImageModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		7D1EB5C32A08519B005D5196 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		7D1EB5C62A08B809005D5196 /* InstagramLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramLogo.swift; sourceTree = "<group>"; };
 		7D1EB5C92A08E366005D5196 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		7D1EB5CB2A096B55005D5196 /* PostImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			children = (
 				7D1EB5C62A08B809005D5196 /* InstagramLogo.swift */,
 				7D1EB5B72A0850A5005D5196 /* HomeViewController.swift */,
+				7D1EB5CB2A096B55005D5196 /* PostImageModel.swift */,
 				7D1EB5C82A08E341005D5196 /* Cells */,
 			);
 			path = HomeViewController;
@@ -243,6 +246,7 @@
 				7D1EB5BE2A085119005D5196 /* AddPublicationViewController.swift in Sources */,
 				7D1EB58F2A0838BC005D5196 /* SceneDelegate.swift in Sources */,
 				7D1EB5B82A0850A5005D5196 /* HomeViewController.swift in Sources */,
+				7D1EB5CC2A096B55005D5196 /* PostImageModel.swift in Sources */,
 				7D1EB5C12A085165005D5196 /* RealsViewController.swift in Sources */,
 				7D1EB5CA2A08E366005D5196 /* PostCell.swift in Sources */,
 			);
