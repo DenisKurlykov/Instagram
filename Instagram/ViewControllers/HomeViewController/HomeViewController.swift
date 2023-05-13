@@ -10,12 +10,16 @@ import UIKit
 class HomeViewController: UIViewController {
     
     private var item: [PostImageModel] = [
-        PostImageModel(userImage: UIImage(named: "dog")!, userName: "Some_dog", subTitle: "Sponsored", postImage: UIImage(named: "postImage")!, numberOfLikes: 100, comment: Comment(userName: "Another_dog", commentText: "Hello world"))
+        PostImageModel(userImage: UIImage(named: "dog")!, userName: "Some_dog", subTitle: "Sponsored", postImage: UIImage(named: "postImage")!, numberOfLikes: 100, comment: Comment(userName: "Another_dog", commentText: "Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world")),
+//        PostImageModel(userImage: UIImage(named: "dog")!, userName: "Some_dog", subTitle: "Sponsored", postImage: UIImage(named: "postImage")!, numberOfLikes: 100, comment: Comment(userName: "Another_dog", commentText: "Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world")),
+//        PostImageModel(userImage: UIImage(named: "dog")!, userName: "Some_dog", subTitle: "Sponsored", postImage: UIImage(named: "postImage")!, numberOfLikes: 100, comment: Comment(userName: "Another_dog", commentText: "Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world")),
+//        PostImageModel(userImage: UIImage(named: "dog")!, userName: "Some_dog", subTitle: "Sponsored", postImage: UIImage(named: "postImage")!, numberOfLikes: 100, comment: Comment(userName: "Another_dog", commentText: "Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world")),
+//        PostImageModel(userImage: UIImage(named: "dog")!, userName: "Some_dog", subTitle: "Sponsored", postImage: UIImage(named: "postImage")!, numberOfLikes: 100, comment: Comment(userName: "Another_dog", commentText: "Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world"))
     ]
     
     private var tableView = UITableView()
-    let identifier = "PostCell"
     
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,8 +53,7 @@ private extension HomeViewController {
     
     func setupTableView() {
         tableView = UITableView(frame: view.bounds, style: .plain)
-        tableView.register(PostCell.self, forCellReuseIdentifier: identifier)
-        //tableView.delegate = self
+        tableView.register(PostCell.self, forCellReuseIdentifier: PostCell.identifier)
         tableView.dataSource = self
         view.addSubview(tableView)
     }
@@ -62,13 +65,11 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? PostCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PostCell.identifier, for: indexPath) as? PostCell else { return UITableViewCell() }
         
         let item = item[indexPath.row]
         cell.configure(with: item)
         return cell
     }
-    
-    
 }
 
