@@ -8,6 +8,6 @@
 import UIKit
 
 enum CellSelection {
-    case stories(StoriesCell)
-    case post(PostCell)
+    case stories([StoriesModel])
+    case post(PostModel)
 }

@@ -34,8 +34,6 @@ class InstagramLogo: UIView {
     }()
     
     // MARK: - Private methods
-    private let stackView = UIStackView()
-    
     private func initializing() {
         addSubview(logoImage)
         setupConstraints()

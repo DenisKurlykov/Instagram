@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct PostImageModel {
+struct PostModel {
     let userImage: UIImage
     let userName: String
     let subTitle: String

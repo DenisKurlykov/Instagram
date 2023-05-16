@@ -11,8 +11,8 @@ class PostCell: UITableViewCell {
     
     static let identifier = "PostCell"
     
-    //MARK: - Public properties
-    public func configure(with item: PostImageModel) {
+    //MARK: - Public methods
+    public func configure(with item: PostModel) {
         userImage.image = item.userImage
         userName.text = item.userName
         subTitle.text = item.subTitle
@@ -221,6 +221,8 @@ private extension PostCell {
         }
     }
 }
+
+// MARK: - Method disable autoresizingMask
 private extension PostCell {
     func disableAutoresizing(_ masks: UIView...) {
         masks.forEach { view in
