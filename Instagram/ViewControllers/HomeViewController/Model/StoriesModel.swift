@@ -10,5 +10,7 @@ import UIKit
 struct StoriesModel {
     let name: String
     let image: UIImage
+    let visibleRingStory: Bool
+    let visibleAddStoryButton: Bool
 }
 

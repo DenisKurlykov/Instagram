@@ -11,29 +11,6 @@ class PostCell: UITableViewCell {
     
     static let identifier = "PostCell"
     
-    //MARK: - Public methods
-    public func configure(with item: PostModel) {
-        userImage.image = item.userImage
-        userName.text = item.userName
-        subTitle.text = item.subTitle
-        postImage.image = item.postImage
-        numberOfLikesLabel.text = String("Нравится: \(item.numberOfLikes)")
-        if let comment = item.comment{
-            configureCommentLabel(with: comment)
-        }
-    }
-    
-    // MARK: - Init
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        initialising()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     // MARK: - Private properties
     private let userImage = UIImageView()
     private let avatarInfoStack = UIStackView()
@@ -48,11 +25,34 @@ class PostCell: UITableViewCell {
     private let numberOfLikesLabel = UILabel()
     private let commentLabel = UILabel()
     
+    // MARK: - Init
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        initialising()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     //MARK: - Life cycle
     override func layoutSubviews() {
         initialising()
         layoutIfNeeded()
         userImage.layer.cornerRadius = userImage.frame.width / 2
+    }
+    
+    //MARK: - Public methods
+    public func configure(with item: PostModel) {
+        userImage.image = item.userImage
+        userName.text = item.userName
+        subTitle.text = item.subTitle
+        postImage.image = item.postImage
+        numberOfLikesLabel.text = String("Нравится: \(item.numberOfLikes)")
+        if let comment = item.comment{
+            configureCommentLabel(with: comment)
+        }
     }
 }
 

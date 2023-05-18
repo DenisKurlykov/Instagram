@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "InstagramLogo.png",
+      "filename" : "Story ring.pdf",
       "idiom" : "universal"
     }
   ],
@@ -10,7 +10,6 @@
     "version" : 1
   },
   "properties" : {
-    "localizable" : true,
     "preserves-vector-representation" : true
   }
 }

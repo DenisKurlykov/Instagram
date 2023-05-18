@@ -34,7 +34,6 @@ class StoriesCell: UITableViewCell {
     // getting data
     func configure(with info: [StoriesModel]) {
         item = info
-
     }
 }
 
@@ -61,7 +60,7 @@ private extension StoriesCell {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-
+            collectionView.heightAnchor.constraint(equalToConstant: 106),
             collectionView.topAnchor.constraint(equalTo: contentView.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
@@ -86,6 +85,6 @@ extension StoriesCell: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegateFlowLayout
 extension StoriesCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: contentView.frame.height / 1.74, height: contentView.frame.height)
+        CGSize(width: 72, height: 98)
     }
 }

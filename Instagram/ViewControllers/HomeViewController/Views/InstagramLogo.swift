@@ -21,15 +21,14 @@ class InstagramLogo: UIView {
     
     // MARK: - Private Constants
     private enum UIConstants {
-        static let logoHeight: CGFloat = 50
-        static let logoWidth: CGFloat = 90
+        static let logoHeight: CGFloat = 30
+        static let logoWidth: CGFloat = 128
     }
     
     // MARK: - Private properties
     private let logoImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "InstagramLogo")
-        image.tintColor = UIColor(named: "TabBarItemColor")
+        image.image = UIImage(named: "LogoDropdown")
         return image
     }()
     

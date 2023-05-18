@@ -15,6 +15,8 @@ class StoriesCollectionViewCell: UICollectionViewCell {
     // MARK: - Private properties
     private let userImageView = UIImageView()
     private let userNameLabel = UILabel()
+    private let ringImageView = UIImageView(image: UIImage(named: "StoryRing"))
+    private let addStoriesButton = UIButton(type: .custom)
     
     // MARK: - Init
     override init(frame: CGRect) {
@@ -39,6 +41,8 @@ class StoriesCollectionViewCell: UICollectionViewCell {
     func configure(with item: StoriesModel) {
         userImageView.image = item.image
         userNameLabel.text = item.name
+        ringImageView.isHidden = !item.visibleRingStory
+        addStoriesButton.isHidden = !item.visibleAddStoryButton
     }
 }
 
@@ -46,11 +50,14 @@ class StoriesCollectionViewCell: UICollectionViewCell {
 private extension StoriesCollectionViewCell {
     func initialiser() {
         contentView(userImageView,
-                    userNameLabel)
+                    userNameLabel,
+                    ringImageView,
+                    addStoriesButton)
         
         setupUserImageView()
         setupUserNameLabel()
         setupConstraints()
+        setupAddStoriesButton()
     }
     
     func setupUserImageView() {
@@ -60,26 +67,42 @@ private extension StoriesCollectionViewCell {
     
     func setupUserNameLabel() {
         userNameLabel.textAlignment = .center
-        userNameLabel.font = .systemFont(ofSize: userNameLabel.frame.height / 2.5)
+        userNameLabel.font = .systemFont(ofSize: 13)
         userNameLabel.textColor = UIColor(named: "TabBarItemColor")
+    }
+    
+    func setupAddStoriesButton() {
+        addStoriesButton.setImage(UIImage(named: "Button"), for: .normal)
     }
     
     func setupConstraints() {
         disableAutoresizing(userImageView,
-                            userNameLabel)
+                            userNameLabel,
+                            ringImageView,
+                            addStoriesButton)
         
         NSLayoutConstraint.activate([
             userImageView.heightAnchor.constraint(equalTo: userImageView.widthAnchor),
-            userImageView.widthAnchor.constraint(equalTo: contentView.widthAnchor),
+            userImageView.widthAnchor.constraint(equalToConstant: 60),
             userImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             userImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            userImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -0),
+            userImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             
             userNameLabel.widthAnchor.constraint(equalTo: userImageView.widthAnchor),
-            //userNameLabel.heightAnchor.constraint(equalTo: userNameLabel.widthAnchor, multiplier: 1/2),
+            userNameLabel.heightAnchor.constraint(equalToConstant: 26),
             userNameLabel.topAnchor.constraint(equalTo: userImageView.bottomAnchor),
             userNameLabel.centerXAnchor.constraint(equalTo: userImageView.centerXAnchor),
-            userNameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -0)
+            userNameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            
+            ringImageView.centerYAnchor.constraint(equalTo: userImageView.centerYAnchor),
+            ringImageView.centerXAnchor.constraint(equalTo: userImageView.centerXAnchor),
+            ringImageView.widthAnchor.constraint(equalToConstant: 72),
+            ringImageView.heightAnchor.constraint(equalTo: ringImageView.widthAnchor),
+            
+            addStoriesButton.bottomAnchor.constraint(equalTo: userImageView.bottomAnchor),
+            addStoriesButton.trailingAnchor.constraint(equalTo: userImageView.trailingAnchor),
+            addStoriesButton.widthAnchor.constraint(equalToConstant: 20),
+            addStoriesButton.heightAnchor.constraint(equalTo: addStoriesButton.widthAnchor)
         ])
     }
 }
