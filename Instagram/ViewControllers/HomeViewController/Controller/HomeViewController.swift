@@ -78,8 +78,8 @@ private extension HomeViewController {
     }
     
     func rightBarButtonItems() -> [UIBarButtonItem] {
-        let heartBarButtonItem = UIBarButtonItem(title: "", image: UIImage(systemName: "heart"), primaryAction: nil, menu: nil)
-        let planeBarButtonItem = UIBarButtonItem(title: "", image: UIImage(systemName: "paperplane"), primaryAction: nil, menu: nil)
+        let heartBarButtonItem = UIBarButtonItem(title: "", image: UIImage(systemName: "heart"), target: self, action: nil)
+        let planeBarButtonItem = UIBarButtonItem(title: "", image: UIImage(systemName: "paperplane"), target: self, action: nil)
         return [planeBarButtonItem, heartBarButtonItem]
     }
     
