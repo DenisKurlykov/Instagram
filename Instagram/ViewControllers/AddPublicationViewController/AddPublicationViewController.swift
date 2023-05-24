@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddPublicationViewController: UIViewController {
+final class AddPublicationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

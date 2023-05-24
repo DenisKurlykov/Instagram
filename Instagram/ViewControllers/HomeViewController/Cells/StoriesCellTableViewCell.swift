@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StoriesCell: UITableViewCell {
+final class StoriesCellTableViewCell: UITableViewCell {
     
     // MARK: - Public properties
     static let identifier = "storiesCell"
@@ -38,7 +38,7 @@ class StoriesCell: UITableViewCell {
 }
 
 // MARK: - Private methods
-private extension StoriesCell {
+private extension StoriesCellTableViewCell {
     func initialising() {
 
         setupCollectionView()
@@ -70,7 +70,7 @@ private extension StoriesCell {
 }
 
 // MARK: - UICollectionViewDataSource
-extension StoriesCell: UICollectionViewDataSource {
+extension StoriesCellTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         item.count
     }
@@ -83,7 +83,7 @@ extension StoriesCell: UICollectionViewDataSource {
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-extension StoriesCell: UICollectionViewDelegateFlowLayout {
+extension StoriesCellTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: 72, height: 98)
     }

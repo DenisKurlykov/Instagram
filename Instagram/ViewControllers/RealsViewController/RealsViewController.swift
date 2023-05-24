@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RealsViewController: UIViewController {
+final class RealsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

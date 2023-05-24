@@ -7,17 +7,17 @@
 
 import UIKit
 
-class PostCell: UITableViewCell {
+final class PostCell: UITableViewCell {
     
     static let identifier = "PostCell"
     
     // MARK: - Private properties
-    private let userImage = UIImageView()
-    private let avatarInfoStack = UIStackView()
-    private let userName = UILabel()
-    private let subTitle = UILabel()
+    private let userImageView = UIImageView()
+    private let avatarInfoStackView = UIStackView()
+    private let userNameLabel = UILabel()
+    private let subTitleLabel = UILabel()
     private let moreButton = UIButton(type: .system)
-    private let postImage = UIImageView()
+    private let postImageView = UIImageView()
     private let likeButton = UIButton(type: .system)
     private let commentButton = UIButton(type: .system)
     private let sharePostButton = UIButton(type: .system)
@@ -38,20 +38,23 @@ class PostCell: UITableViewCell {
     
     //MARK: - Life cycle
     override func layoutSubviews() {
+        super.layoutSubviews()
         initialising()
         layoutIfNeeded()
-        userImage.layer.cornerRadius = userImage.frame.width / 2
+        userImageView.layer.cornerRadius = userImageView.frame.width / 2
     }
     
     //MARK: - Public methods
     public func configure(with item: PostModel) {
-        userImage.image = item.userImage
-        userName.text = item.userName
-        subTitle.text = item.subTitle
-        postImage.image = item.postImage
+        userImageView.image = item.userImage
+        userNameLabel.text = item.userName
+        subTitleLabel.text = item.subTitle
+        postImageView.image = item.postImage
         numberOfLikesLabel.text = String("Нравится: \(item.numberOfLikes)")
-        if let comment = item.comment{
+        if let comment = item.comment {
             configureCommentLabel(with: comment)
+        } else {
+            commentLabel.isHidden = true
         }
     }
 }
@@ -59,10 +62,10 @@ class PostCell: UITableViewCell {
 // MARK: - Private methods
 private extension PostCell {
     func initialising() {
-        contentView(userImage,
-                    avatarInfoStack,
+        contentView(userImageView,
+                    avatarInfoStackView,
                     moreButton,
-                    postImage,
+                    postImageView,
                     likeButton,
                     commentButton,
                     sharePostButton,
@@ -86,27 +89,27 @@ private extension PostCell {
     }
     
     func setupUserImage() {
-        userImage.layer.cornerRadius = userImage.frame.width / 2
-        userImage.clipsToBounds = true
+        userImageView.layer.cornerRadius = userImageView.frame.width / 2
+        userImageView.clipsToBounds = true
     }
     
     func setupPostStackView() {
-        avatarInfoStack.axis = .vertical
-        avatarInfoStack.alignment = .leading
-        avatarInfoStack.spacing = 2
-        avatarInfoStack.distribution = .fillEqually
-        avatarInfoStack.addArrangedSubview(userName)
-        avatarInfoStack.addArrangedSubview(subTitle)
+        avatarInfoStackView.axis = .vertical
+        avatarInfoStackView.alignment = .leading
+        avatarInfoStackView.spacing = 2
+        avatarInfoStackView.distribution = .fillEqually
+        avatarInfoStackView.addArrangedSubview(userNameLabel)
+        avatarInfoStackView.addArrangedSubview(subTitleLabel)
     }
     
     func setupUserName() {
-        userName.font = .boldSystemFont(ofSize: 12)
-        userName.textColor = UIColor(named: "TabBarItemColor")
+        userNameLabel.font = .boldSystemFont(ofSize: 12)
+        userNameLabel.textColor = UIColor(named: "TabBarItemColor")
     }
     
     func setupSubTitle() {
-        subTitle.font = .systemFont(ofSize: 11)
-        subTitle.textColor = UIColor(named: "TabBarItemColor")
+        subTitleLabel.font = .systemFont(ofSize: 11)
+        subTitleLabel.textColor = UIColor(named: "TabBarItemColor")
     }
     
     func setupMoreButton() {
@@ -154,10 +157,10 @@ private extension PostCell {
     }
     
     func setupConstraints() {
-        disableAutoresizing(userImage,
-                            avatarInfoStack,
+        disableAutoresizing(userImageView,
+                            avatarInfoStackView,
                             moreButton,
-                            postImage,
+                            postImageView,
                             likeButton,
                             commentButton,
                             sharePostButton,
@@ -166,25 +169,25 @@ private extension PostCell {
                             commentLabel)
         
         NSLayoutConstraint.activate([
-            userImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
-            userImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 6),
-            userImage.heightAnchor.constraint(equalTo: userImage.widthAnchor),
-            userImage.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 1/12),
+            userImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
+            userImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 6),
+            userImageView.heightAnchor.constraint(equalTo: userImageView.widthAnchor),
+            userImageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 1/12),
             
-            avatarInfoStack.leadingAnchor.constraint(equalTo: userImage.trailingAnchor, constant: 8),
-            avatarInfoStack.centerYAnchor.constraint(equalTo: userImage.centerYAnchor),
-            avatarInfoStack.heightAnchor.constraint(equalTo: userImage.heightAnchor),
+            avatarInfoStackView.leadingAnchor.constraint(equalTo: userImageView.trailingAnchor, constant: 8),
+            avatarInfoStackView.centerYAnchor.constraint(equalTo: userImageView.centerYAnchor),
+            avatarInfoStackView.heightAnchor.constraint(equalTo: userImageView.heightAnchor),
             
             moreButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 1/16),
             moreButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12),
-            moreButton.centerYAnchor.constraint(equalTo: userImage.centerYAnchor),
+            moreButton.centerYAnchor.constraint(equalTo: userImageView.centerYAnchor),
             
-            postImage.widthAnchor.constraint(equalTo: contentView.widthAnchor),
-            postImage.heightAnchor.constraint(equalTo: postImage.widthAnchor),
-            postImage.topAnchor.constraint(equalTo: userImage.bottomAnchor, constant: 8),
+            postImageView.widthAnchor.constraint(equalTo: contentView.widthAnchor),
+            postImageView.heightAnchor.constraint(equalTo: postImageView.widthAnchor),
+            postImageView.topAnchor.constraint(equalTo: userImageView.bottomAnchor, constant: 8),
             
             likeButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
-            likeButton.topAnchor.constraint(equalTo: postImage.bottomAnchor, constant: 10),
+            likeButton.topAnchor.constraint(equalTo: postImageView.bottomAnchor, constant: 10),
             likeButton.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 1/16),
             
             commentButton.leadingAnchor.constraint(equalTo: likeButton.trailingAnchor, constant: 12),
@@ -218,15 +221,6 @@ private extension PostCell {
     func contentView(_ add: UIView...) {
         add.forEach { view in
             contentView.addSubview(view)
-        }
-    }
-}
-
-// MARK: - Method disable autoresizingMask
-private extension PostCell {
-    func disableAutoresizing(_ masks: UIView...) {
-        masks.forEach { view in
-            view.translatesAutoresizingMaskIntoConstraints = false
         }
     }
 }

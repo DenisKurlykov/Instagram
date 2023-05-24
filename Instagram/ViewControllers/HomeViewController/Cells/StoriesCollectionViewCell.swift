@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StoriesCollectionViewCell: UICollectionViewCell {
+final class StoriesCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Public properties
     static let identifier = "storiesCollectionViewCell"
@@ -116,12 +116,4 @@ private extension StoriesCollectionViewCell {
     }
 }
 
-// MARK: - Method disable autoresizingMask
-private extension StoriesCollectionViewCell {
-    func disableAutoresizing(_ masks: UIView...) {
-        masks.forEach { view in
-            view.translatesAutoresizingMaskIntoConstraints = false
-        }
-    }
-}
 

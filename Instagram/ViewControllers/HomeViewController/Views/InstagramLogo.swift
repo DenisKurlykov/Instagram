@@ -7,7 +7,12 @@
 
 import UIKit
 
-class InstagramLogo: UIView {
+final class InstagramLogo: UIView {
+    
+    private enum UIConstants {
+        static let logoHeight: CGFloat = 30
+        static let logoWidth: CGFloat = 128
+    }
     
     // MARK: - Init
     init() {
@@ -17,12 +22,6 @@ class InstagramLogo: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    // MARK: - Private Constants
-    private enum UIConstants {
-        static let logoHeight: CGFloat = 30
-        static let logoWidth: CGFloat = 128
     }
     
     // MARK: - Private properties

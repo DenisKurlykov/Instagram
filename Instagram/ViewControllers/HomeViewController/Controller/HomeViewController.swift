@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
     
     private var item: [CellSelection] = [
         .stories([
@@ -25,8 +25,7 @@ class HomeViewController: UIViewController {
                             subTitle: "Sponsored",
                             postImage: UIImage(named: "postImage") ?? UIImage(),
                             numberOfLikes: 100,
-                            comment: Comment(userName: "Another_dog",
-                                             commentText: "Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world"))),
+                            comment: nil)),
         .post(PostModel(userImage: UIImage(named: "dog") ?? UIImage(),
                         userName: "Some_dog",
                         subTitle: "Sponsored",
@@ -85,7 +84,7 @@ private extension HomeViewController {
     
     func setupTableView() {
         tableView = UITableView(frame: view.bounds, style: .plain)
-        tableView.register(StoriesCell.self, forCellReuseIdentifier: StoriesCell.identifier)
+        tableView.register(StoriesCellTableViewCell.self, forCellReuseIdentifier: StoriesCellTableViewCell.identifier)
         tableView.register(PostCell.self, forCellReuseIdentifier: PostCell.identifier)
         tableView.separatorStyle = .none
         tableView.dataSource = self
@@ -104,7 +103,7 @@ extension HomeViewController: UITableViewDataSource {
         
         switch item {
         case .stories(let info):
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: StoriesCell.identifier, for: indexPath) as? StoriesCell else { return UITableViewCell()}
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: StoriesCellTableViewCell.identifier, for: indexPath) as? StoriesCellTableViewCell else { return UITableViewCell()}
             cell.configure(with: info)
             return cell
             
