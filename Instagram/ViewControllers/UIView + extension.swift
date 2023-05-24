@@ -8,6 +8,7 @@
 import UIKit
 
 extension  UIView {
+    /// Disable AutoLayout
     func disableAutoresizing(_ masks: UIView...) {
         masks.forEach { view in
             view.translatesAutoresizingMaskIntoConstraints = false
