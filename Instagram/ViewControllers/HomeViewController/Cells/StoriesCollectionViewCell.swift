@@ -25,6 +25,7 @@ final class StoriesCollectionViewCell: UICollectionViewCell {
         initialiser()
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -104,15 +105,6 @@ private extension StoriesCollectionViewCell {
             addStoriesButton.widthAnchor.constraint(equalToConstant: 20),
             addStoriesButton.heightAnchor.constraint(equalTo: addStoriesButton.widthAnchor)
         ])
-    }
-}
-
-// MARK: - Method for add view to superView
-private extension StoriesCollectionViewCell {
-    func contentView(_ add: UIView...) {
-        add.forEach { view in
-            contentView.addSubview(view)
-        }
     }
 }
 

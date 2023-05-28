@@ -25,6 +25,7 @@
 		7D414C2F2A1E7BAE0053DC68 /* UIView + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D414C2E2A1E7BAE0053DC68 /* UIView + extension.swift */; };
 		7D6B5A2A2A0F8C9A000EE1C9 /* StoriesCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B5A292A0F8C9A000EE1C9 /* StoriesCellTableViewCell.swift */; };
 		7D6B5A2C2A0F8D6F000EE1C9 /* CellCelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B5A2B2A0F8D6F000EE1C9 /* CellCelection.swift */; };
+		7DB08FE52A23097500CB83AE /* UITableViewCell + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB08FE42A23097500CB83AE /* UITableViewCell + extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		7D414C2E2A1E7BAE0053DC68 /* UIView + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + extension.swift"; sourceTree = "<group>"; };
 		7D6B5A292A0F8C9A000EE1C9 /* StoriesCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesCellTableViewCell.swift; sourceTree = "<group>"; };
 		7D6B5A2B2A0F8D6F000EE1C9 /* CellCelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCelection.swift; sourceTree = "<group>"; };
+		7DB08FE42A23097500CB83AE /* UITableViewCell + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell + extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				7D414C2E2A1E7BAE0053DC68 /* UIView + extension.swift */,
+				7DB08FE42A23097500CB83AE /* UITableViewCell + extension.swift */,
 				7D1EB5B62A08506B005D5196 /* TabBarController */,
 				7D1EB5B92A0850C8005D5196 /* HomeViewController */,
 				7D1EB5BC2A0850F1005D5196 /* SearchViewController */,
@@ -279,6 +282,7 @@
 			files = (
 				7D1EB5C72A08B809005D5196 /* InstagramLogo.swift in Sources */,
 				7D6B5A2A2A0F8C9A000EE1C9 /* StoriesCellTableViewCell.swift in Sources */,
+				7DB08FE52A23097500CB83AE /* UITableViewCell + extension.swift in Sources */,
 				7D1EB5BB2A0850DE005D5196 /* SearchViewController.swift in Sources */,
 				7D3DB7F92A126D3900F25152 /* StoriesCollectionViewCell.swift in Sources */,
 				7D414C2F2A1E7BAE0053DC68 /* UIView + extension.swift in Sources */,

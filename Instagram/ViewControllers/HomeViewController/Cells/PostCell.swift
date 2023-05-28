@@ -32,6 +32,7 @@ final class PostCell: UITableViewCell {
         initialising()
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -213,14 +214,5 @@ private extension PostCell {
             commentLabel.topAnchor.constraint(equalTo: numberOfLikesLabel.bottomAnchor, constant: 6),
             commentLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -6)
         ])
-    }
-}
-
-// MARK: - Method for add view to superView
-private extension PostCell {
-    func contentView(_ add: UIView...) {
-        add.forEach { view in
-            contentView.addSubview(view)
-        }
     }
 }
