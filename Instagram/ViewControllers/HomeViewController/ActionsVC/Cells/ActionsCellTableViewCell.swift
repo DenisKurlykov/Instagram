@@ -39,11 +39,10 @@ class ActionsCellTableViewCell: UITableViewCell {
     
     // MARK: - Public methods
     func configure(with model: Model) {
-        userImageView.image = UIImage(named: model.userImage)
+        configureUserImageView(with: model)
         configureInfoMessageLabel(with: model)
         configureSubscribeButton(with: model)
         configureLikedImageView(with: model)
-        
     }
 }
 
@@ -58,22 +57,19 @@ private extension ActionsCellTableViewCell {
                     subscribeButton,
                     likedImageView)
         
-        setupUserImageView()
         setupConstraints()
     }
     
-    func setupUserImageView() {
+    func configureUserImageView(with model: Model) {
         userImageView.clipsToBounds = true
-    }
-    
-    func setupInfoMessageLabel() {
-        infoMessageLabel.textColor = UIColor(named: "TabBarItemColor")
+        userImageView.image = UIImage(named: model.userImage)
     }
     
     func configureInfoMessageLabel(with model: Model) {
         let string = model.userName + " " + model.infoMessage
         let attributedString = NSMutableAttributedString(string: string)
         let range = NSRange(location: .zero, length: model.userName.count)
+        infoMessageLabel.textColor = UIColor(named: "TabBarItemColor")
         infoMessageLabel.font = .systemFont(ofSize: 13)
         infoMessageLabel.lineBreakMode = .byCharWrapping
         infoMessageLabel.numberOfLines = 0
