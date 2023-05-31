@@ -41,6 +41,7 @@ final class StoriesCellTableViewCell: UITableViewCell {
 // MARK: - Private methods
 private extension StoriesCellTableViewCell {
     func initialising() {
+        selectionStyle = .none
 
         setupCollectionView()
         setupConstraints()

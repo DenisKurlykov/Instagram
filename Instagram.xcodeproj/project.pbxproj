@@ -26,6 +26,12 @@
 		7D6B5A2A2A0F8C9A000EE1C9 /* StoriesCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B5A292A0F8C9A000EE1C9 /* StoriesCellTableViewCell.swift */; };
 		7D6B5A2C2A0F8D6F000EE1C9 /* CellCelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B5A2B2A0F8D6F000EE1C9 /* CellCelection.swift */; };
 		7DB08FE52A23097500CB83AE /* UITableViewCell + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB08FE42A23097500CB83AE /* UITableViewCell + extension.swift */; };
+		7DB08FE82A230E1E00CB83AE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB08FE72A230E1E00CB83AE /* Model.swift */; };
+		7DB08FEC2A23112100CB83AE /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB08FEB2A23112100CB83AE /* ActionViewController.swift */; };
+		7DB08FEF2A2316C700CB83AE /* Sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB08FEE2A2316C700CB83AE /* Sections.swift */; };
+		7DB08FF12A231A7200CB83AE /* UICollectionViewCell + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB08FF02A231A7200CB83AE /* UICollectionViewCell + extension.swift */; };
+		7DB08FF32A231C1600CB83AE /* ActionsCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB08FF22A231C1600CB83AE /* ActionsCellTableViewCell.swift */; };
+		7DB08FF92A27C88300CB83AE /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB08FF82A27C88300CB83AE /* SectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +56,12 @@
 		7D6B5A292A0F8C9A000EE1C9 /* StoriesCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesCellTableViewCell.swift; sourceTree = "<group>"; };
 		7D6B5A2B2A0F8D6F000EE1C9 /* CellCelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCelection.swift; sourceTree = "<group>"; };
 		7DB08FE42A23097500CB83AE /* UITableViewCell + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell + extension.swift"; sourceTree = "<group>"; };
+		7DB08FE72A230E1E00CB83AE /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		7DB08FEB2A23112100CB83AE /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		7DB08FEE2A2316C700CB83AE /* Sections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sections.swift; sourceTree = "<group>"; };
+		7DB08FF02A231A7200CB83AE /* UICollectionViewCell + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell + extension.swift"; sourceTree = "<group>"; };
+		7DB08FF22A231C1600CB83AE /* ActionsCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsCellTableViewCell.swift; sourceTree = "<group>"; };
+		7DB08FF82A27C88300CB83AE /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +125,7 @@
 			children = (
 				7D414C2E2A1E7BAE0053DC68 /* UIView + extension.swift */,
 				7DB08FE42A23097500CB83AE /* UITableViewCell + extension.swift */,
+				7DB08FF02A231A7200CB83AE /* UICollectionViewCell + extension.swift */,
 				7D1EB5B62A08506B005D5196 /* TabBarController */,
 				7D1EB5B92A0850C8005D5196 /* HomeViewController */,
 				7D1EB5BC2A0850F1005D5196 /* SearchViewController */,
@@ -138,6 +151,7 @@
 				7D3DB7FC2A13F7D600F25152 /* Views */,
 				7D3DB7FB2A13E93200F25152 /* Controller */,
 				7D1EB5C82A08E341005D5196 /* Cells */,
+				7DB08FE62A230DD300CB83AE /* ActionsVC */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
@@ -206,6 +220,50 @@
 			isa = PBXGroup;
 			children = (
 				7D1EB5C62A08B809005D5196 /* InstagramLogo.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7DB08FE62A230DD300CB83AE /* ActionsVC */ = {
+			isa = PBXGroup;
+			children = (
+				7DB08FF72A27C85C00CB83AE /* Views */,
+				7DB08FE92A230E2D00CB83AE /* Model */,
+				7DB08FEA2A2310C700CB83AE /* Controller */,
+				7DB08FED2A23167800CB83AE /* Cells */,
+			);
+			path = ActionsVC;
+			sourceTree = "<group>";
+		};
+		7DB08FE92A230E2D00CB83AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7DB08FE72A230E1E00CB83AE /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7DB08FEA2A2310C700CB83AE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7DB08FEB2A23112100CB83AE /* ActionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7DB08FED2A23167800CB83AE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7DB08FEE2A2316C700CB83AE /* Sections.swift */,
+				7DB08FF22A231C1600CB83AE /* ActionsCellTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7DB08FF72A27C85C00CB83AE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7DB08FF82A27C88300CB83AE /* SectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -285,10 +343,16 @@
 				7DB08FE52A23097500CB83AE /* UITableViewCell + extension.swift in Sources */,
 				7D1EB5BB2A0850DE005D5196 /* SearchViewController.swift in Sources */,
 				7D3DB7F92A126D3900F25152 /* StoriesCollectionViewCell.swift in Sources */,
+				7DB08FEF2A2316C700CB83AE /* Sections.swift in Sources */,
 				7D414C2F2A1E7BAE0053DC68 /* UIView + extension.swift in Sources */,
+				7DB08FEC2A23112100CB83AE /* ActionViewController.swift in Sources */,
+				7DB08FF92A27C88300CB83AE /* SectionView.swift in Sources */,
 				7D1EB5912A0838BC005D5196 /* TabBarController.swift in Sources */,
+				7DB08FF12A231A7200CB83AE /* UICollectionViewCell + extension.swift in Sources */,
 				7D1EB5C42A08519B005D5196 /* AccountViewController.swift in Sources */,
 				7D1EB58D2A0838BC005D5196 /* AppDelegate.swift in Sources */,
+				7DB08FE82A230E1E00CB83AE /* Model.swift in Sources */,
+				7DB08FF32A231C1600CB83AE /* ActionsCellTableViewCell.swift in Sources */,
 				7D1EB5BE2A085119005D5196 /* AddPublicationViewController.swift in Sources */,
 				7D3DB7F72A124C2B00F25152 /* StoriesModel.swift in Sources */,
 				7D6B5A2C2A0F8D6F000EE1C9 /* CellCelection.swift in Sources */,
