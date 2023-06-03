@@ -7,14 +7,14 @@
 
 import UIKit
 
-class ActionsCellTableViewCell: UITableViewCell {
+final class ActionsCellTableViewCell: UITableViewCell {
     
     static let identifier = "actionsCell"
     
     // MARK: - Private properties
     private let userImageView = UIImageView()
     private let infoMessageLabel = UILabel()
-    private let subscribeButton = UIButton()
+    private let subscribeButton = SubscribeButton()
     private let likedImageView = UIImageView()
     
     // MARK: - Init
@@ -41,7 +41,7 @@ class ActionsCellTableViewCell: UITableViewCell {
     func configure(with model: Model) {
         configureUserImageView(with: model)
         configureInfoMessageLabel(with: model)
-        configureSubscribeButton(with: model)
+        subscribeButton.configureSubscribeButton(with: model)
         configureLikedImageView(with: model)
     }
 }
@@ -57,7 +57,15 @@ private extension ActionsCellTableViewCell {
                     subscribeButton,
                     likedImageView)
         
+        setupInfoMessageLabel()
         setupConstraints()
+    }
+    
+    func setupInfoMessageLabel() {
+        infoMessageLabel.textColor = UIColor(named: "TabBarItemColor")
+        infoMessageLabel.lineBreakMode = .byCharWrapping
+        infoMessageLabel.numberOfLines = 0
+        infoMessageLabel.textAlignment = .left
     }
     
     func configureUserImageView(with model: Model) {
@@ -69,35 +77,9 @@ private extension ActionsCellTableViewCell {
         let string = model.userName + " " + model.infoMessage
         let attributedString = NSMutableAttributedString(string: string)
         let range = NSRange(location: .zero, length: model.userName.count)
-        infoMessageLabel.textColor = UIColor(named: "TabBarItemColor")
         infoMessageLabel.font = .systemFont(ofSize: 13)
-        infoMessageLabel.lineBreakMode = .byCharWrapping
-        infoMessageLabel.numberOfLines = 0
-        infoMessageLabel.textAlignment = .left
         attributedString.addAttribute(NSAttributedString.Key.font, value: UIFont.boldSystemFont(ofSize: 13), range: range)
         infoMessageLabel.attributedText = attributedString
-    }
-    
-    func configureSubscribeButton(with model: Model) {
-        if model.subscribe == true {
-            subscribeButton.setTitle("Вы подписаны", for: .normal)
-            subscribeButton.backgroundColor = .systemBlue
-        } else if model.subscribe == false {
-            subscribeButton.setTitle("Подписаться", for: .normal)
-            if overrideUserInterfaceStyle == .dark {
-                subscribeButton.setTitleColor(UIColor(named: "TabBarItemColor"), for: .normal)
-                subscribeButton.layer.borderWidth = 1
-                subscribeButton.layer.borderColor = UIColor.lightGray.cgColor
-                subscribeButton.tintColor = .black
-            } else {
-                subscribeButton.setTitleColor(UIColor(named: "TabBarItemColor"), for: .normal)
-                subscribeButton.layer.borderWidth = 1
-                subscribeButton.layer.borderColor = UIColor.lightGray.cgColor
-                subscribeButton.tintColor = .white
-            }
-        } else {
-            subscribeButton.isHidden = true
-        }
     }
     
     func configureLikedImageView(with model: Model) {

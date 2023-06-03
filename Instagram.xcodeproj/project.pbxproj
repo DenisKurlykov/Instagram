@@ -23,6 +23,7 @@
 		7D3DB7F72A124C2B00F25152 /* StoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3DB7F62A124C2B00F25152 /* StoriesModel.swift */; };
 		7D3DB7F92A126D3900F25152 /* StoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3DB7F82A126D3900F25152 /* StoriesCollectionViewCell.swift */; };
 		7D414C2F2A1E7BAE0053DC68 /* UIView + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D414C2E2A1E7BAE0053DC68 /* UIView + extension.swift */; };
+		7D4221572A2B22C800E5CCB8 /* SubscribeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4221562A2B22C800E5CCB8 /* SubscribeButton.swift */; };
 		7D6B5A2A2A0F8C9A000EE1C9 /* StoriesCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B5A292A0F8C9A000EE1C9 /* StoriesCellTableViewCell.swift */; };
 		7D6B5A2C2A0F8D6F000EE1C9 /* CellCelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B5A2B2A0F8D6F000EE1C9 /* CellCelection.swift */; };
 		7DB08FE52A23097500CB83AE /* UITableViewCell + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB08FE42A23097500CB83AE /* UITableViewCell + extension.swift */; };
@@ -53,6 +54,7 @@
 		7D3DB7F62A124C2B00F25152 /* StoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesModel.swift; sourceTree = "<group>"; };
 		7D3DB7F82A126D3900F25152 /* StoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		7D414C2E2A1E7BAE0053DC68 /* UIView + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + extension.swift"; sourceTree = "<group>"; };
+		7D4221562A2B22C800E5CCB8 /* SubscribeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeButton.swift; sourceTree = "<group>"; };
 		7D6B5A292A0F8C9A000EE1C9 /* StoriesCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesCellTableViewCell.swift; sourceTree = "<group>"; };
 		7D6B5A2B2A0F8D6F000EE1C9 /* CellCelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCelection.swift; sourceTree = "<group>"; };
 		7DB08FE42A23097500CB83AE /* UITableViewCell + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell + extension.swift"; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				7DB08FF82A27C88300CB83AE /* SectionView.swift */,
+				7D4221562A2B22C800E5CCB8 /* SubscribeButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				7D1EB5BB2A0850DE005D5196 /* SearchViewController.swift in Sources */,
 				7D3DB7F92A126D3900F25152 /* StoriesCollectionViewCell.swift in Sources */,
 				7DB08FEF2A2316C700CB83AE /* Sections.swift in Sources */,
+				7D4221572A2B22C800E5CCB8 /* SubscribeButton.swift in Sources */,
 				7D414C2F2A1E7BAE0053DC68 /* UIView + extension.swift in Sources */,
 				7DB08FEC2A23112100CB83AE /* ActionViewController.swift in Sources */,
 				7DB08FF92A27C88300CB83AE /* SectionView.swift in Sources */,
