@@ -63,6 +63,8 @@ final class PostCell: UITableViewCell {
 // MARK: - Private methods
 private extension PostCell {
     func initialising() {
+        selectionStyle = .none
+        
         contentView(userImageView,
                     avatarInfoStackView,
                     moreButton,

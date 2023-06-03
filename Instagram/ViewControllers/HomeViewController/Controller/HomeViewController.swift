@@ -77,8 +77,14 @@ private extension HomeViewController {
     }
     
     func rightBarButtonItems() -> [UIBarButtonItem] {
-        let heartBarButtonItem = UIBarButtonItem(title: "", image: UIImage(systemName: "heart"), target: self, action: nil)
-        let planeBarButtonItem = UIBarButtonItem(title: "", image: UIImage(systemName: "paperplane"), target: self, action: nil)
+        let heartBarButtonItem = UIBarButtonItem(title: "",
+                                                 image: UIImage(systemName: "heart"),
+                                                 target: self,
+                                                 action: #selector(heartBarButtonPressed))
+        let planeBarButtonItem = UIBarButtonItem(title: "",
+                                                 image: UIImage(systemName: "paperplane"),
+                                                 target: self,
+                                                 action: nil)
         return [planeBarButtonItem, heartBarButtonItem]
     }
     
@@ -89,6 +95,14 @@ private extension HomeViewController {
         tableView.separatorStyle = .none
         tableView.dataSource = self
         view.addSubview(tableView)
+    }
+}
+
+// MARK: - Actions methods
+@objc extension HomeViewController {
+    func heartBarButtonPressed() {
+        let vc = ActionViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
