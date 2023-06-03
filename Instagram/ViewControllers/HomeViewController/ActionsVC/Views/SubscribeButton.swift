@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SubscribeButton: UIButton {
+final class SubscribeButton: UIButton {
     
     // MARK: Init
     init() {
@@ -19,11 +19,14 @@ class SubscribeButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Public methods
     func configureSubscribeButton(with model: Model) {
-        if model.subscribe == true {
+        guard let model = model.subscribe else { return isHidden = true}
+        
+        if model {
             setTitle("Вы подписаны", for: .normal)
             backgroundColor = .systemBlue
-        } else if model.subscribe == false {
+        } else if !model {
             setTitle("Подписаться", for: .normal)
             if overrideUserInterfaceStyle == .dark {
                 setTitleColor(UIColor(named: "TabBarItemColor"), for: .normal)
@@ -36,8 +39,6 @@ class SubscribeButton: UIButton {
                 layer.borderColor = UIColor.lightGray.cgColor
                 tintColor = .white
             }
-        } else {
-            isHidden = true
         }
     }
 }

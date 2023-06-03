@@ -81,12 +81,10 @@ private extension ActionsCellTableViewCell {
         attributedString.addAttribute(NSAttributedString.Key.font, value: UIFont.boldSystemFont(ofSize: 13), range: range)
         infoMessageLabel.attributedText = attributedString
     }
+
     
     func configureLikedImageView(with model: Model) {
-        if model.image == nil {
-            likedImageView.isHidden = true
-        }
-        guard let image = model.image else { return }
+        guard let image = model.image else { return likedImageView.isHidden = true}
         likedImageView.image = UIImage(named: image)
     }
     

@@ -47,7 +47,6 @@ private extension ActionViewController {
         navigationController?.navigationBar.topItem?.backButtonTitle = "Уведомления"
     }
     
-    
     func setupTableView() {
         tableView = UITableView(frame: view.bounds, style: .grouped)
         tableView.backgroundColor = UIColor(named: "BackgroundColor")
